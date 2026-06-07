@@ -2,88 +2,145 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Berloga Log House</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f8f6f2;color:#2f473a}
-nav{position:fixed;top:0;width:100%;background:rgba(20,40,30,.9);padding:15px;z-index:100}
-nav a{color:#fff;text-decoration:none;margin:0 12px}
-.hero{height:100vh;background:url('hero.jpg') center/cover;display:flex;align-items:center;color:#fff}
-.overlay{background:rgba(0,0,0,.45);width:100%;height:100%;display:flex;align-items:center}
-.container{width:90%;max-width:1200px;margin:auto}
-.btn{background:#a98467;color:#fff;padding:14px 28px;text-decoration:none;border-radius:6px}
-.section{padding:80px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#fff;padding:20px;border-radius:10px}
-.gallery img{width:100%;height:260px;object-fit:cover;border-radius:10px}
-footer{background:#1f3328;color:#fff;padding:30px;text-align:center}
+:root{--green:#344e41;--green2:#588157;--gold:#a98467;--brown:#6c584c;--blue:#0077b6}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:#f8f6f2;color:var(--brown);line-height:1.7}
+.container{width:min(1200px,92%);margin:auto}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(20,30,25,.88);backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Cormorant Garamond",serif;color:#fff;font-size:2rem;text-decoration:none}
+.links a{color:#fff;text-decoration:none;margin-left:24px}
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('470780146_585968560747059_2896101772173072283_n.jpg') center/cover;display:flex;align-items:center;color:#fff}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,9vw,7rem)}
+.btn{display:inline-block;background:var(--gold);padding:16px 34px;color:#fff;text-decoration:none;border-radius:8px;margin-top:24px}
+.section{padding:100px 0}
+.title{font-family:"Cormorant Garamond",serif;font-size:3rem;text-align:center;color:var(--green);margin-bottom:20px}
+.sub{text-align:center;max-width:700px;margin:0 auto 60px}
+.features,.stats,.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.card{background:#fff;padding:28px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.stats .card{text-align:center;background:var(--green);color:#fff}
+.stats h3{font-size:3rem;color:var(--gold)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.g1{grid-column:span 4}.g2{grid-column:span 4}.g3{grid-column:span 4}
+.g4{grid-column:span 6}.g5{grid-column:span 3}.g6{grid-column:span 3}
+.location{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.contact a{display:block;margin:10px 0;color:var(--blue);text-decoration:none}
+.social a{display:inline-block;padding:14px 26px;color:#fff;text-decoration:none;border-radius:8px;margin:8px}
+.ig{background:#a98467}.fb{background:#0077b6}.wa{background:#588157}
+footer{background:var(--green);color:#fff;padding:40px;text-align:center}
+@media(max-width:900px){
+.links{display:none}
+.location,.gallery{display:block}
+.gallery img{height:280px;margin-bottom:14px}
+}
 </style>
 </head>
 <body>
+
 <nav>
-<a href="#">Home</a>
+<div class="container nav">
+<a class="logo" href="#">Berloga Log House</a>
+<div class="links">
+<a href="#about">About</a>
 <a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
 <a href="#location">Location</a>
 <a href="#contact">Contact</a>
+</div>
+</div>
 </nav>
 
 <section class="hero">
-<div class="overlay">
 <div class="container">
-<h1 style="font-size:70px">Berloga Log House</h1>
-<p>A luxury guest house surrounded by nature.</p>
-<a class="btn" href="#contact">Book Your Stay</a>
+<h1>Berloga Log House</h1>
+<p>A luxury mountain retreat where nature, comfort and unforgettable memories meet.</p>
+<a href="#contact" class="btn">Book Your Stay</a>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="container">
+<h2 class="title">Experience Luxury in Nature</h2>
+<p class="sub">Surrounded by forests, mountains and a flowing river, Berloga Log House offers a unique escape in every season.</p>
+
+<div class="features">
+<div class="card"><h3>🏡 Authentic Log House</h3><p>Premium wooden architecture with luxury comfort.</p></div>
+<div class="card"><h3>🌲 Mountain Views</h3><p>Beautiful scenery and peaceful surroundings.</p></div>
+<div class="card"><h3>✨ Premium Experience</h3><p>Perfect for families, couples and private events.</p></div>
+<div class="card"><h3>🔥 Four Seasons</h3><p>Enjoy summer greenery and magical winter nights.</p></div>
 </div>
 </div>
 </section>
 
 <section class="section">
-<h2>Features</h2>
-<div class="grid">
-<div class="card">Authentic Log House</div>
-<div class="card">Nature Surroundings</div>
-<div class="card">Comfort & Privacy</div>
-<div class="card">Perfect for Groups</div>
+<div class="container">
+<div class="stats">
+<div class="card"><h3>500+</h3><p>Guests</p></div>
+<div class="card"><h3>4.9</h3><p>Rating</p></div>
+<div class="card"><h3>24/7</h3><p>Support</p></div>
+<div class="card"><h3>100%</h3><p>Nature</p></div>
+</div>
 </div>
 </section>
 
 <section class="section" id="gallery">
-<h2>Gallery</h2>
-<p>Replace image sources with your uploaded Berloga photos.</p>
-<div class="grid gallery">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
+<div class="container">
+<h2 class="title">Our Gallery</h2>
+
+<div class="gallery">
+<img class="g1" src="470780146_585968560747059_2896101772173072283_n.jpg">
+<img class="g2" src="475218716_588003047323280_6353727844698648624_n.jpg">
+<img class="g3" src="477772959_597620723028179_2402528959675993253_n.jpg">
+<img class="g4" src="472172801_596031353074113_1082988268115387928_n.jpg">
+<img class="g5" src="681804898_18050182547743003_5986017391338051924_n.jpg">
+<img class="g6" src="480511785_601301845993400_2213382790574220664_n.jpg">
+</div>
 </div>
 </section>
 
-<section class="section">
-<h2>Guest Reviews</h2>
-<div class="grid">
-<div class="card">★★★★★ Absolutely stunning place.</div>
-<div class="card">★★★★★ Perfect weekend escape.</div>
-<div class="card">★★★★★ Luxury cabin experience.</div>
+<section class="section" id="reviews">
+<div class="container">
+<h2 class="title">Guest Reviews</h2>
+<div class="testimonials">
+<div class="card">★★★★★<br><br>Absolutely stunning location with beautiful mountain views.</div>
+<div class="card">★★★★★<br><br>Perfect place to relax with friends and family.</div>
+<div class="card">★★★★★<br><br>A unique luxury cabin experience in Armenia.</div>
+</div>
 </div>
 </section>
 
 <section class="section" id="location">
-<h2>Location</h2>
-<iframe src="https://maps.google.com/maps?q=Berloga%20Log%20House&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0"></iframe>
+<div class="container">
+<div class="location">
+<div>
+<h2 class="title" style="text-align:left">Location</h2>
+<iframe src="https://maps.google.com/maps?q=Berloga%20Log%20House&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;border-radius:18px"></iframe>
+</div>
+<div class="contact">
+<h2 class="title" style="text-align:left">Contact Us</h2>
+<a href="tel:+37455350000">+374 55 350 000</a>
+<a href="tel:+37477076006">+374 77 076 006</a>
+<a href="tel:+37499650000">+374 99 650 000</a>
+
+<div class="social" style="margin-top:20px">
+<a class="ig" href="https://www.instagram.com/berloga_log_house/" target="_blank">Instagram</a>
+<a class="fb" href="https://www.facebook.com/profile.php?id=100083407687460" target="_blank">Facebook</a>
+<a class="wa" href="https://wa.me/37455350000" target="_blank">WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="section" id="contact">
-<h2>Contact Us</h2>
-<p>+374 55 350 000</p>
-<p>+374 77 076 006</p>
-<p>+374 99 650 000</p>
-<p><a href="https://www.instagram.com/berloga_log_house/">Instagram</a></p>
-<p><a href="https://www.facebook.com/profile.php?id=100083407687460">Facebook</a></p>
-<p><a href="https://wa.me/37455350000">WhatsApp</a></p>
-</section>
+<footer>
+<h3>Berloga Log House</h3>
+<p>Luxury Guest House • Nature • Comfort • Relaxation</p>
+</footer>
 
-<footer>© Berloga Log House</footer>
 </body>
 </html>
