@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berloga Log House</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f8f6f2;color:#2f473a}
+nav{position:fixed;top:0;width:100%;background:rgba(20,40,30,.9);padding:15px;z-index:100}
+nav a{color:#fff;text-decoration:none;margin:0 12px}
+.hero{height:100vh;background:url('hero.jpg') center/cover;display:flex;align-items:center;color:#fff}
+.overlay{background:rgba(0,0,0,.45);width:100%;height:100%;display:flex;align-items:center}
+.container{width:90%;max-width:1200px;margin:auto}
+.btn{background:#a98467;color:#fff;padding:14px 28px;text-decoration:none;border-radius:6px}
+.section{padding:80px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:10px}
+.gallery img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+footer{background:#1f3328;color:#fff;padding:30px;text-align:center}
+</style>
+</head>
+<body>
+<nav>
+<a href="#">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</nav>
 
+<section class="hero">
+<div class="overlay">
+<div class="container">
+<h1 style="font-size:70px">Berloga Log House</h1>
+<p>A luxury guest house surrounded by nature.</p>
+<a class="btn" href="#contact">Book Your Stay</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Features</h2>
+<div class="grid">
+<div class="card">Authentic Log House</div>
+<div class="card">Nature Surroundings</div>
+<div class="card">Comfort & Privacy</div>
+<div class="card">Perfect for Groups</div>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<h2>Gallery</h2>
+<p>Replace image sources with your uploaded Berloga photos.</p>
+<div class="grid gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+</div>
+</section>
+
+<section class="section">
+<h2>Guest Reviews</h2>
+<div class="grid">
+<div class="card">★★★★★ Absolutely stunning place.</div>
+<div class="card">★★★★★ Perfect weekend escape.</div>
+<div class="card">★★★★★ Luxury cabin experience.</div>
+</div>
+</section>
+
+<section class="section" id="location">
+<h2>Location</h2>
+<iframe src="https://maps.google.com/maps?q=Berloga%20Log%20House&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0"></iframe>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact Us</h2>
+<p>+374 55 350 000</p>
+<p>+374 77 076 006</p>
+<p>+374 99 650 000</p>
+<p><a href="https://www.instagram.com/berloga_log_house/">Instagram</a></p>
+<p><a href="https://www.facebook.com/profile.php?id=100083407687460">Facebook</a></p>
+<p><a href="https://wa.me/37455350000">WhatsApp</a></p>
+</section>
+
+<footer>© Berloga Log House</footer>
+</body>
+</html>
