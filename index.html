@@ -108,10 +108,17 @@ font-weight:500;
 }
 
 .hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("images/hero.jpg");
+  height:100vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+  linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+  url("images/472172801_596031353074113_1082988268115387928_n.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
 background-size:cover;
 background-position:center;
 display:flex;
@@ -199,25 +206,21 @@ text-align:center;
 font-size:3rem;
 color:#d4a373;
 }
+<div class="gallery-grid">
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+  <img src="images/477772959_597620723028179_2402528959675993253_n.jpg" alt="Berloga Log House Night View">
 
-.gallery-grid img{
-width:100%;
-height:350px;
-object-fit:cover;
-border-radius:18px;
-transition:.4s;
-cursor:pointer;
-}
+  <img src="images/475218716_588003047323280_6353727844698648624_n.jpg" alt="Berloga Winter View">
 
-.gallery-grid img:hover{
-transform:scale(1.04);
-}
+  <img src="images/470780146_585968560747059_2896101772173072283_n.jpg" alt="Berloga Forest View">
+
+  <img src="images/681804898_18050182547743003_5986017391338051924_n.jpg" alt="Bridge and River">
+
+  <img src="images/480511785_601301845993400_2213382790574220664_n.jpg" alt="Mountain View">
+
+  <img src="images/472172801_596031353074113_1082988268115387928_n.jpg" alt="Berloga Log House">
+
+</div>
 
 .reviews{
 display:grid;
