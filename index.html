@@ -1,19 +1,56 @@
+Because GitHub Pages cannot access images that were uploaded into this chat, the complete HTML file must reference image files that you upload into your GitHub repository.
+
+Create this structure:
+
+```text
+berloga-log-house/
+│
+├── index.html
+│
+└── images/
+    ├── hero.jpg
+    ├── gallery1.jpg
+    ├── gallery2.jpg
+    ├── gallery3.jpg
+    ├── gallery4.jpg
+    ├── gallery5.jpg
+    └── gallery6.jpg
+```
+
+Rename your photos as:
+
+```text
+hero.jpg      -> 472172801_596031353074113_1082988268115387928_n.jpg
+
+gallery1.jpg  -> 477772959_597620723028179_2402528959675993253_n.jpg
+gallery2.jpg  -> 475218716_588003047323280_6353727844698648624_n.jpg
+gallery3.jpg  -> 470780146_585968560747059_2896101772173072283_n.jpg
+gallery4.jpg  -> 681804898_18050182547743003_5986017391338051924_n.jpg
+gallery5.jpg  -> 480511785_601301845993400_2213382790574220664_n.jpg
+gallery6.jpg  -> 472172801_596031353074113_1082988268115387928_n.jpg
+```
+
+Then use this complete `index.html`:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Berloga Log House</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
---c1:#344e41;
---c2:#588157;
---c3:#a98467;
---c4:#6c584c;
---c5:#0077b6;
+--primary:#344e41;
+--secondary:#588157;
+--accent:#a98467;
+--dark:#1f2b24;
+--light:#faf8f5;
 }
 
 *{
@@ -28,9 +65,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:Inter,sans-serif;
-background:#faf8f5;
-color:var(--c4);
-line-height:1.7;
+background:var(--light);
+color:#444;
+overflow-x:hidden;
 }
 
 .container{
@@ -41,138 +78,247 @@ margin:auto;
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:rgba(52,78,65,.95);
-backdrop-filter:blur(10px);
 z-index:999;
+background:rgba(20,20,20,.55);
+backdrop-filter:blur(12px);
 }
 
-.nav{
+.nav-wrapper{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 0;
+padding:22px 0;
 }
 
 .logo{
 font-family:"Cormorant Garamond",serif;
 font-size:2rem;
-color:#fff;
+font-weight:700;
+color:white;
 text-decoration:none;
 }
 
-.links a{
-color:#fff;
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
 text-decoration:none;
-margin-left:24px;
+font-weight:500;
 }
 
 .hero{
 height:100vh;
-display:flex;
-align-items:center;
-color:white;
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80");
+url("images/hero.jpg");
 background-size:cover;
 background-position:center;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:700px;
+color:white;
 }
 
 .hero h1{
 font-family:"Cormorant Garamond",serif;
-font-size:clamp(4rem,8vw,7rem);
+font-size:clamp(4rem,9vw,7rem);
+line-height:1;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.2rem;
-margin-top:10px;
+font-size:1.3rem;
+margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-background:var(--c3);
-padding:16px 34px;
-border-radius:50px;
-color:#fff;
+padding:18px 40px;
+background:var(--accent);
+color:white;
 text-decoration:none;
-margin-top:20px;
+border-radius:50px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 .section{
 padding:100px 0;
 }
 
-.title{
+.section-title{
 font-family:"Cormorant Garamond",serif;
-font-size:3rem;
+font-size:3.2rem;
 text-align:center;
-color:var(--c1);
-margin-bottom:30px;
+margin-bottom:60px;
+color:var(--primary);
 }
 
-.grid{
+.features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.card{
+.feature{
 background:white;
-padding:30px;
+padding:35px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.gallery img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:16px;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-.stats .card{
 text-align:center;
-background:var(--c1);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.feature h3{
+margin-top:15px;
+}
+
+.stats{
+background:var(--primary);
 color:white;
 }
 
-.stats h3{
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
 font-size:3rem;
-color:var(--c3);
+color:#d4a373;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:18px;
+transition:.4s;
+cursor:pointer;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.04);
+}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.review{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 15px 30px rgba(0,0,0,.08);
 }
 
 .location{
 display:grid;
 grid-template-columns:1.2fr .8fr;
-gap:30px;
+gap:40px;
+}
+
+iframe{
+width:100%;
+height:500px;
+border:none;
+border-radius:20px;
+}
+
+.contact-box{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.contact-box h3{
+font-size:2rem;
+margin-bottom:20px;
+font-family:"Cormorant Garamond",serif;
+}
+
+.contact-box p{
+margin-bottom:15px;
+font-size:1.1rem;
+}
+
+.social{
+margin-top:25px;
 }
 
 .social a{
-display:inline-block;
-padding:14px 24px;
-margin:6px;
-border-radius:10px;
-color:white;
+display:block;
 text-decoration:none;
+color:white;
+padding:15px;
+margin-bottom:12px;
+border-radius:12px;
+font-weight:600;
+text-align:center;
+}
+
+.instagram{
+background:#a98467;
+}
+
+.facebook{
+background:#1877f2;
+}
+
+.whatsapp{
+background:#25d366;
 }
 
 footer{
-background:var(--c1);
+background:var(--dark);
 color:white;
 text-align:center;
-padding:40px;
+padding:60px 20px;
+}
+
+footer h3{
+font-family:"Cormorant Garamond",serif;
+font-size:2rem;
+margin-bottom:10px;
 }
 
 @media(max-width:900px){
 
-.links{
+.nav-links{
 display:none;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 .location{
@@ -180,135 +326,236 @@ grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:3rem;
+font-size:4rem;
 }
 
 }
+
 </style>
 </head>
 <body>
 
 <nav>
-<div class="container nav">
+<div class="container nav-wrapper">
+
 <a href="#" class="logo">Berloga Log House</a>
 
-<div class="links">
+<div class="nav-links">
 <a href="#about">About</a>
 <a href="#gallery">Gallery</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </div>
+
 </div>
 </nav>
 
 <section class="hero">
 <div class="container">
-<h1>Berloga Log House</h1>
-<p>Luxury mountain retreat surrounded by nature.</p>
+
+<div class="hero-content">
+
+<h1>Berloga<br>Log House</h1>
+
+<p>
+Luxury mountain retreat surrounded by forests,
+rivers and breathtaking Armenian nature.
+</p>
+
 <a href="#contact" class="btn">Book Your Stay</a>
+
+</div>
+
 </div>
 </section>
 
-<section class="section" id="about">
+<section id="about" class="section">
+
 <div class="container">
 
-<h2 class="title">Experience Nature & Luxury</h2>
+<h2 class="section-title">Experience Nature & Luxury</h2>
 
-<div class="grid">
-<div class="card">🏡 Premium Log House</div>
-<div class="card">🌲 Forest & Mountain Views</div>
-<div class="card">🔥 Four Season Experience</div>
-<div class="card">✨ Luxury Interior</div>
-<div class="card">👨‍👩‍👧 Family Friendly</div>
-<div class="card">📸 Perfect Photo Spots</div>
+<div class="features">
+
+<div class="feature">
+<h3>🏡 Premium Log House</h3>
+</div>
+
+<div class="feature">
+<h3>🌲 Mountain & Forest Views</h3>
+</div>
+
+<div class="feature">
+<h3>🔥 Four Season Experience</h3>
+</div>
+
+<div class="feature">
+<h3>✨ Luxury Interior</h3>
+</div>
+
+<div class="feature">
+<h3>👨‍👩‍👧 Family Friendly</h3>
+</div>
+
+<div class="feature">
+<h3>📸 Perfect Photo Spots</h3>
+</div>
+
 </div>
 
 </div>
 </section>
 
 <section class="section stats">
+
 <div class="container">
 
-<div class="grid">
-<div class="card"><h3>500+</h3><p>Guests</p></div>
-<div class="card"><h3>4.9★</h3><p>Rating</p></div>
-<div class="card"><h3>24/7</h3><p>Support</p></div>
-<div class="card"><h3>100%</h3><p>Nature</p></div>
+<div class="stats-grid">
+
+<div class="stat">
+<h3>500+</h3>
+<p>Guests</p>
+</div>
+
+<div class="stat">
+<h3>4.9★</h3>
+<p>Rating</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Support</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Nature</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section class="section gallery" id="gallery">
+<section id="gallery" class="section">
+
 <div class="container">
 
-<h2 class="title">Gallery</h2>
+<h2 class="section-title">Gallery</h2>
 
-<div class="grid">
+<div class="gallery-grid">
 
-<img src="https://picsum.photos/600/400?random=1" alt="">
-<img src="https://picsum.photos/600/400?random=2" alt="">
-<img src="https://picsum.photos/600/400?random=3" alt="">
-<img src="https://picsum.photos/600/400?random=4" alt="">
-<img src="https://picsum.photos/600/400?random=5" alt="">
-<img src="https://picsum.photos/600/400?random=6" alt="">
+<img src="images/gallery1.jpg" alt="">
+<img src="images/gallery2.jpg" alt="">
+<img src="images/gallery3.jpg" alt="">
+<img src="images/gallery4.jpg" alt="">
+<img src="images/gallery5.jpg" alt="">
+<img src="images/gallery6.jpg" alt="">
+
+</div>
 
 </div>
 
-</div>
 </section>
 
-<section class="section" id="reviews">
+<section id="reviews" class="section">
+
 <div class="container">
 
-<h2 class="title">Guest Reviews</h2>
+<h2 class="section-title">Guest Reviews</h2>
 
-<div class="grid">
-<div class="card">★★★★★ Amazing atmosphere and views.</div>
-<div class="card">★★★★★ Perfect getaway in Armenia.</div>
-<div class="card">★★★★★ Beautiful log house and nature.</div>
+<div class="reviews">
+
+<div class="review">
+★★★★★<br><br>
+Amazing atmosphere and breathtaking views.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Perfect getaway destination in Armenia.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Beautiful log house, river and nature.
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section class="section" id="contact">
-<div class="container location">
+<section id="contact" class="section">
+
+<div class="container">
+
+<div class="location">
 
 <div>
-<h2 class="title" style="text-align:left">Location</h2>
+
+<h2 class="section-title" style="text-align:left;">
+Location
+</h2>
 
 <iframe
-src="https://maps.google.com/maps?q=Armenia&t=&z=7&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="450"
-style="border:0;border-radius:16px;">
+src="https://maps.google.com/maps?q=Berloga%20Log%20House&t=&z=14&ie=UTF8&iwloc=&output=embed">
 </iframe>
 
 </div>
 
-<div>
+<div class="contact-box">
 
-<h2 class="title" style="text-align:left">Contact</h2>
+<h3>Contact Us</h3>
 
-<p>+374 55 350 000</p>
-<p>+374 77 076 006</p>
-<p>+374 99 650 000</p>
+<p>📞 +374 55 350 000</p>
+<p>📞 +374 77 076 006</p>
+<p>📞 +374 99 650 000</p>
 
 <div class="social">
-<a href="https://www.instagram.com/berloga_log_house/" style="background:#a98467;">Instagram</a>
-<a href="https://www.facebook.com/profile.php?id=100083407687460" style="background:#0077b6;">Facebook</a>
-<a href="https://wa.me/37455350000" style="background:#588157;">WhatsApp</a>
+
+<a class="instagram"
+href="https://www.instagram.com/berloga_log_house/"
+target="_blank">
+Instagram
+</a>
+
+<a class="facebook"
+href="https://www.facebook.com/profile.php?id=100083407687460"
+target="_blank">
+Facebook
+</a>
+
+<a class="whatsapp"
+href="https://wa.me/37455350000"
+target="_blank">
+WhatsApp
+</a>
+
 </div>
 
 </div>
+
 </div>
+
+</div>
+
 </section>
 
 <footer>
+
 <h3>Berloga Log House</h3>
-<p>Luxury Guest House • Armenia</p>
+
+<p>
+Luxury Guest House • Armenia
+</p>
+
 </footer>
 
 </body>
 </html>
+```
+
+This file is ready for GitHub Pages as long as you upload the images into the `images` folder with the exact names referenced above.
