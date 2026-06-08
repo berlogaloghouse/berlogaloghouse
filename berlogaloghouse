@@ -4,39 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Berloga Log House</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
---c1:#344e41;--c2:#588157;--c3:#a98467;--c4:#6c584c;--c5:#0077b6;
+--c1:#344e41;
+--c2:#588157;
+--c3:#a98467;
+--c4:#6c584c;
+--c5:#0077b6;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:#faf8f5;color:var(--c4);line-height:1.7}
-nav{position:fixed;top:0;width:100%;background:rgba(52,78,65,.95);backdrop-filter:blur(10px);z-index:999}
-.container{width:min(1200px,92%);margin:auto}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-family:"Cormorant Garamond",serif;font-size:2rem;color:#fff;text-decoration:none}
-.links a{color:#fff;text-decoration:none;margin-left:24px}
-.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('hero.jpg') center/cover;display:flex;align-items:center;color:#fff}
-.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,8vw,7rem)}
-.btn{display:inline-block;background:var(--c3);padding:16px 34px;border-radius:50px;color:#fff;text-decoration:none;margin-top:20px}
-.section{padding:100px 0}
-.title{font-family:"Cormorant Garamond",serif;font-size:3rem;text-align:center;color:var(--c1);margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-.card{background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.gallery img{width:100%;height:280px;object-fit:cover;border-radius:16px}
-.stats .card{text-align:center;background:var(--c1);color:#fff}
-.stats h3{font-size:3rem;color:var(--c3)}
-.location{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
-.social a{display:inline-block;padding:14px 24px;margin:6px;border-radius:10px;color:#fff;text-decoration:none}
-footer{background:var(--c1);color:#fff;text-align:center;padding:40px}
-@media(max-width:900px){.links{display:none}.location{grid-template-columns:1fr}}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#faf8f5;
+color:var(--c4);
+line-height:1.7;
+}
+
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(52,78,65,.95);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-family:"Cormorant Garamond",serif;
+font-size:2rem;
+color:#fff;
+text-decoration:none;
+}
+
+.links a{
+color:#fff;
+text-decoration:none;
+margin-left:24px;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(4rem,8vw,7rem);
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+background:var(--c3);
+padding:16px 34px;
+border-radius:50px;
+color:#fff;
+text-decoration:none;
+margin-top:20px;
+}
+
+.section{
+padding:100px 0;
+}
+
+.title{
+font-family:"Cormorant Garamond",serif;
+font-size:3rem;
+text-align:center;
+color:var(--c1);
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:16px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.stats .card{
+text-align:center;
+background:var(--c1);
+color:white;
+}
+
+.stats h3{
+font-size:3rem;
+color:var(--c3);
+}
+
+.location{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:30px;
+}
+
+.social a{
+display:inline-block;
+padding:14px 24px;
+margin:6px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+}
+
+footer{
+background:var(--c1);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+@media(max-width:900px){
+
+.links{
+display:none;
+}
+
+.location{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+}
 </style>
 </head>
 <body>
 
 <nav>
 <div class="container nav">
-<a class="logo" href="#">Berloga Log House</a>
+<a href="#" class="logo">Berloga Log House</a>
+
 <div class="links">
 <a href="#about">About</a>
 <a href="#gallery">Gallery</a>
@@ -50,13 +205,15 @@ footer{background:var(--c1);color:#fff;text-align:center;padding:40px}
 <div class="container">
 <h1>Berloga Log House</h1>
 <p>Luxury mountain retreat surrounded by nature.</p>
-<a class="btn" href="#contact">Book Your Stay</a>
+<a href="#contact" class="btn">Book Your Stay</a>
 </div>
 </section>
 
 <section class="section" id="about">
 <div class="container">
+
 <h2 class="title">Experience Nature & Luxury</h2>
+
 <div class="grid">
 <div class="card">🏡 Premium Log House</div>
 <div class="card">🌲 Forest & Mountain Views</div>
@@ -65,61 +222,85 @@ footer{background:var(--c1);color:#fff;text-align:center;padding:40px}
 <div class="card">👨‍👩‍👧 Family Friendly</div>
 <div class="card">📸 Perfect Photo Spots</div>
 </div>
+
 </div>
 </section>
 
 <section class="section stats">
 <div class="container">
+
 <div class="grid">
 <div class="card"><h3>500+</h3><p>Guests</p></div>
 <div class="card"><h3>4.9★</h3><p>Rating</p></div>
 <div class="card"><h3>24/7</h3><p>Support</p></div>
 <div class="card"><h3>100%</h3><p>Nature</p></div>
 </div>
+
 </div>
 </section>
 
 <section class="section gallery" id="gallery">
 <div class="container">
+
 <h2 class="title">Gallery</h2>
+
 <div class="grid">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
+
+<img src="https://picsum.photos/600/400?random=1" alt="">
+<img src="https://picsum.photos/600/400?random=2" alt="">
+<img src="https://picsum.photos/600/400?random=3" alt="">
+<img src="https://picsum.photos/600/400?random=4" alt="">
+<img src="https://picsum.photos/600/400?random=5" alt="">
+<img src="https://picsum.photos/600/400?random=6" alt="">
+
 </div>
+
 </div>
 </section>
 
 <section class="section" id="reviews">
 <div class="container">
+
 <h2 class="title">Guest Reviews</h2>
+
 <div class="grid">
 <div class="card">★★★★★ Amazing atmosphere and views.</div>
 <div class="card">★★★★★ Perfect getaway in Armenia.</div>
 <div class="card">★★★★★ Beautiful log house and nature.</div>
 </div>
+
 </div>
 </section>
 
 <section class="section" id="contact">
 <div class="container location">
+
 <div>
 <h2 class="title" style="text-align:left">Location</h2>
-<iframe src="https://maps.google.com/maps?q=Berloga%20Log%20House&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;border-radius:16px"></iframe>
+
+<iframe
+src="https://maps.google.com/maps?q=Armenia&t=&z=7&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="450"
+style="border:0;border-radius:16px;">
+</iframe>
+
 </div>
+
 <div>
+
 <h2 class="title" style="text-align:left">Contact</h2>
+
 <p>+374 55 350 000</p>
 <p>+374 77 076 006</p>
 <p>+374 99 650 000</p>
+
 <div class="social">
-<a style="background:#a98467" href="https://www.instagram.com/berloga_log_house/">Instagram</a>
-<a style="background:#0077b6" href="https://www.facebook.com/profile.php?id=100083407687460">Facebook</a>
-<a style="background:#588157" href="https://wa.me/37455350000">WhatsApp</a>
+<a href="https://www.instagram.com/berloga_log_house/" style="background:#a98467;">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=100083407687460" style="background:#0077b6;">Facebook</a>
+<a href="https://wa.me/37455350000" style="background:#588157;">WhatsApp</a>
 </div>
+
 </div>
 </div>
 </section>
